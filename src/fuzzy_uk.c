@@ -14,9 +14,9 @@ static struct CommonWordsData {
   
 } s_data;
 
-static GColor8 s_main_colour;
-static GColor8 s_high_colour;
-static GColor8 s_dark_colour;
+static GColor s_main_colour;
+static GColor s_high_colour;
+static GColor s_dark_colour;
 
 static AppSync s_sync;
 static uint8_t s_sync_buffer[64];
@@ -26,6 +26,7 @@ enum WeatherKey {
 };
 
 static void set_colour(uint8_t temp){
+#ifdef PBL_COLOR
   APP_LOG(APP_LOG_LEVEL_DEBUG, "Setting temp: %d", temp);
   if(temp > 100){
     //error, or apocalypse. Either way, black.
@@ -68,6 +69,12 @@ static void set_colour(uint8_t temp){
     s_high_colour = GColorWhite;
     s_dark_colour = GColorOxfordBlue;
   }
+#else
+  s_main_colour = GColorBlack;
+  s_high_colour = GColorWhite;
+  s_dark_colour = GColorBlack;
+#endif
+        
   window_set_background_color(s_data.window,s_main_colour);
   text_layer_set_text_color(s_data.text_time_layer, s_high_colour);
   text_layer_set_text_color(s_data.text_shadow_layer, s_dark_colour);
