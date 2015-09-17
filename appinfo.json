@@ -1,0 +1,31 @@
+{
+    "appKeys": {
+        "dummy": 0
+    },
+    "capabilities": [
+        ""
+    ],
+    "companyName": "Stew Wilson",
+    "longName": "Fuzzy Time in Colour",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/screenshot.png",
+                "menuIcon": true,
+                "name": "SCREENSHOT",
+                "type": "png"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "fuzzy_time_uk",
+    "targetPlatforms": [
+        "basalt"
+    ],
+    "uuid": "a9cd735e-0026-4598-9f76-b766001234eb",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
