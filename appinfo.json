@@ -3,10 +3,10 @@
         "dummy": 0
     },
     "capabilities": [
-        ""
+        "location"
     ],
     "companyName": "Stew Wilson",
-    "longName": "Fuzzy Time in Colour",
+    "longName": "Colour Fuzzy Time",
     "projectType": "native",
     "resources": {
         "media": [
@@ -19,7 +19,7 @@
         ]
     },
     "sdkVersion": "3",
-    "shortName": "fuzzy_time_uk",
+    "shortName": "colour_fuzzy_time",
     "targetPlatforms": [
         "basalt"
     ],
