@@ -23,8 +23,8 @@
     "targetPlatforms": [
         "basalt"
     ],
-    "uuid": "10dae5ad-2c69-4fea-ba08-989ffac1b28b",
-    "versionLabel": "1.0",
+    "uuid": "55be1760-1fe9-4a0f-a5c4-006cbcd4aef2",
+    "versionLabel": "1.1",
     "watchapp": {
         "watchface": true
     }
