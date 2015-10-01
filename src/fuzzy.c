@@ -13,9 +13,9 @@ static Layer *s_line_layer;
 static TextLayer *s_date_layer;
 static TextLayer *s_shadate_layer;
 
-static GColor8 s_main_colour;
-static GColor8 s_high_colour;
-static GColor8 s_dark_colour;
+static GColor s_main_colour;
+static GColor s_high_colour;
+static GColor s_dark_colour;
 
 static uint8_t s_charge;
 
@@ -27,6 +27,7 @@ enum WeatherKey {
 };
 
 static void set_colour(uint8_t temp){
+#ifdef PBL_COLOR
   APP_LOG(APP_LOG_LEVEL_DEBUG, "Setting temp: %d", temp);
   if(temp > 100){
     //error, or apocalypse. Either way, black.
@@ -69,6 +70,12 @@ static void set_colour(uint8_t temp){
     s_high_colour = GColorWhite;
     s_dark_colour = GColorOxfordBlue;
   }
+#else
+  s_main_colour = GColorBlack;
+  s_high_colour = GColorWhite;
+  s_dark_colour = GColorBlack;
+#endif
+  
   window_set_background_color(s_main_window,s_main_colour);
   text_layer_set_text_color(s_time_layer, s_high_colour);
   text_layer_set_text_color(s_shadow_layer, s_dark_colour);
@@ -106,7 +113,9 @@ static void request_weather(void) {
 
 static void update_graphics(Layer *lyr, GContext *ctx) {
   GRect bounds = layer_get_bounds(s_canvas_layer);
+#ifdef PBL_COLOR
   graphics_context_set_antialiased(ctx, true);
+#endif
 
   // Draw the battery shadow
   graphics_context_set_fill_color(ctx, s_dark_colour);
@@ -154,7 +163,7 @@ static void main_window_load(Window *window) {
   
   s_main_colour = GColorBlack;
   s_high_colour = GColorWhite;
-  s_dark_colour = GColorDarkGray;
+  s_dark_colour = GColorBlack;
   
   GFont s_time_font = fonts_get_system_font(FONT_KEY_BITHAM_30_BLACK);
   GFont s_date_font = fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD);

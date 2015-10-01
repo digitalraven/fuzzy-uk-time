@@ -21,7 +21,8 @@
     "sdkVersion": "3",
     "shortName": "colour_fuzzy_time",
     "targetPlatforms": [
-        "basalt"
+        "basalt",
+        "apilite"
     ],
     "uuid": "55be1760-1fe9-4a0f-a5c4-006cbcd4aef2",
     "versionLabel": "1.2",
