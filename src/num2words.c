@@ -1,3 +1,4 @@
+#include <pebble.h>
 #include "num2words.h"
 #include "string.h"
 

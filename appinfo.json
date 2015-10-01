@@ -1,6 +1,6 @@
 {
     "appKeys": {
-        "dummy": 0
+        "WEATHER_TEMPERATURE_KEY": 3
     },
     "capabilities": [
         "location"
@@ -10,12 +10,12 @@
     "projectType": "native",
     "resources": {
         "media": [
-            {
-                "file": "images/screenshot.png",
-                "menuIcon": true,
-                "name": "SCREENSHOT",
-                "type": "png"
-            }
+          {
+            "file": "images/screenshot.png",
+            "menuIcon": true,
+            "name": "SCREENSHOT",
+            "type": "png"
+          }
         ]
     },
     "sdkVersion": "3",
@@ -24,7 +24,11 @@
         "basalt"
     ],
     "uuid": "55be1760-1fe9-4a0f-a5c4-006cbcd4aef2",
+<<<<<<< HEAD
+    "versionLabel": "1.2",
+=======
     "versionLabel": "1.1",
+>>>>>>> e984f17262cb005e3a64843a92841bd6967f4518
     "watchapp": {
         "watchface": true
     }
