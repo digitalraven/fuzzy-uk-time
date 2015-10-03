@@ -139,7 +139,7 @@ static void update_time() {
   struct tm *tick_time = localtime(&temp);
   int minutes = tick_time->tm_min;
   int hours = tick_time->tm_hour;
-  if(minutes % 15 == 0){
+  if(minutes % 30 == 0){
     // request weather every 15 minutes
     request_weather();
   }
@@ -243,6 +243,10 @@ static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
   update_time();
 }
 
+static void tap_handler(AccelAxisType axis, int32_t direction) {
+  request_weather();
+}
+
 static void battery_handler(BatteryChargeState charge) {
   s_charge = charge.charge_percent;
 }
@@ -258,6 +262,7 @@ static void init() {
   });
   window_stack_push(s_main_window, true);
   tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
+  accel_tap_service_subscribe(tap_handler);
   battery_state_service_subscribe(battery_handler);
   app_message_open(64, 64);
 }

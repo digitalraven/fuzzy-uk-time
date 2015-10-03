@@ -10,22 +10,22 @@
     "projectType": "native",
     "resources": {
         "media": [
-          {
-            "file": "images/screenshot.png",
-            "menuIcon": true,
-            "name": "SCREENSHOT",
-            "type": "png"
-          }
+            {
+                "file": "images/screenshot.png",
+                "menuIcon": true,
+                "name": "SCREENSHOT",
+                "type": "png"
+            }
         ]
     },
     "sdkVersion": "3",
     "shortName": "colour_fuzzy_time",
     "targetPlatforms": [
-        "basalt",
-        "apilite"
+        "aplite",
+        "basalt"
     ],
     "uuid": "55be1760-1fe9-4a0f-a5c4-006cbcd4aef2",
-    "versionLabel": "1.3",
+    "versionLabel": "1.4",
     "watchapp": {
         "watchface": true
     }
